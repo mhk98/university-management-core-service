@@ -12,7 +12,7 @@ const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
     sendResponse<AcademicSemester>(res, {
         statusCode: httpStatus.OK,
         success: true,
-        message: "Academic Semster Created!!",
+        message: "Academic Semester Created!!",
         data: result
     })
 })

@@ -5,7 +5,7 @@ export const AcademicSemesterFilterAbleFileds = ['searchTerm', 'code', 'startMon
 export const academicSemesterTitleCodeMapper: {
     [key: string]: string;
 } = {
-    Autumn: '01',
+    Autum: '01',
     Summer: '02',
     Fall: '03',
 };
