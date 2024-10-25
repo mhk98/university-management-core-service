@@ -111,10 +111,16 @@ const updateOneInDB = async (
         },
         data: payload
     });
-    if (result) {
-        await RedisClient.publish(EVENT_ACADEMIC_SEMESTER_UPDATED, JSON.stringify(result))
+    // if (result) {
+    //     await RedisClient.publish(EVENT_ACADEMIC_SEMESTER_UPDATED, JSON.stringify(result))
+    // }
+    // return result;
+
+    if(result){
+        RedisClient.publish(EVENT_ACADEMIC_SEMESTER_UPDATED, JSON.stringify(result))
     }
-    return result;
+
+    return result
 };
 
 const deleteByIdFromDB = async (id: string): Promise<AcademicSemester> => {
