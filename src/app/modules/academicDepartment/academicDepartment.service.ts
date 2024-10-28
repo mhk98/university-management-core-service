@@ -15,8 +15,13 @@ const insertIntoDB = async (data: AcademicDepartment): Promise<AcademicDepartmen
         }
     });
 
-    if (result) {
-        await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_CREATED, JSON.stringify(result));
+    // if (result) {
+    //     await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_CREATED, JSON.stringify(result));
+    // }
+
+
+    if(result) {
+        await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_CREATED, JSON.stringify(result))
     }
 
     return result;
@@ -118,8 +123,13 @@ const updateOneInDB = async (
             academicFaculty: true
         }
     });
-    if (result) {
-        await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_UPDATED, JSON.stringify(result));
+    // if (result) {
+    //     await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_UPDATED, JSON.stringify(result));
+    // }
+
+
+    if(result) {
+        await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_UPDATED, JSON.stringify(result))
     }
     return result;
 };
@@ -133,8 +143,12 @@ const deleteByIdFromDB = async (id: string): Promise<AcademicDepartment> => {
             academicFaculty: true
         }
     });
-    if (result) {
-        await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_DELETED, JSON.stringify(result));
+    // if (result) {
+    //     await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_DELETED, JSON.stringify(result));
+    // }
+
+    if(result) {
+        await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_DELETED, JSON.stringify(result))
     }
     return result;
 };
