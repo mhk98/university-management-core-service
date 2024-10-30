@@ -127,10 +127,10 @@ const updateOneInDB = async (
     //     await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_UPDATED, JSON.stringify(result));
     // }
 
+if(result) {
+    RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_UPDATED, JSON.stringify(result))
+}
 
-    if(result) {
-        await RedisClient.publish(EVENT_ACADEMIC_DEPARTMENT_UPDATED, JSON.stringify(result))
-    }
     return result;
 };
 
